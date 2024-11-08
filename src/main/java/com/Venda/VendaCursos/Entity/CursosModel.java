@@ -12,7 +12,7 @@ public class CursosModel {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  
-	private int id;
+	private long id;
 	private String titulo;
 	private int qtdeAulas;
 	private boolean isBasico;
@@ -21,7 +21,7 @@ public class CursosModel {
 	public CursosModel() {
 	}
 	
-	public CursosModel(int id, String titulo, int qtdeAulas, boolean isBasico, float preco) {
+	public CursosModel(long id, String titulo, int qtdeAulas, boolean isBasico, float preco) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -30,10 +30,10 @@ public class CursosModel {
 		this.preco = preco;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getTitulo() {

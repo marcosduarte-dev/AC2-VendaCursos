@@ -19,7 +19,7 @@ public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  
-	private int id;
+	private long id;
 	private String nome;
 	private String RA;
 	private LocalDate dataRenovacao = LocalDate.now();
@@ -30,7 +30,7 @@ public class Aluno {
 	@Embedded
     private Aluno_Email email;
 	
-	public Aluno(int id, String nome, String ra, 
+	public Aluno(long id, String nome, String ra, 
 			LocalDate dataRenovacao, float mensalidade, boolean logado,
 			List<Integer> cursosAdicionais) {
 		super();
@@ -41,10 +41,15 @@ public class Aluno {
 		this.logado = logado;
 		//this.cursosAdicionais = cursosAdicionais;
 	}
-	public int getId() {
+	
+	public Aluno() {
+		
+	}
+
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNome() {

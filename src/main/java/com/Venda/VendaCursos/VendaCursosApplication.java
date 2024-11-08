@@ -2,6 +2,8 @@ package com.Venda.VendaCursos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 public class VendaCursosApplication {
@@ -10,4 +12,9 @@ public class VendaCursosApplication {
 		SpringApplication.run(VendaCursosApplication.class, args);
 	}
 
+	@RequestMapping("/")
+	@ResponseBody
+	String home() {
+		return "Hello World";
+	}
 }
