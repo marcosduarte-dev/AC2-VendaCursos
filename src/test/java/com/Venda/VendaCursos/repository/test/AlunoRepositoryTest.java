@@ -15,26 +15,24 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-public class UserRepositoryTest {
+public class AlunoRepositoryTest {
 
 	@Autowired
     private Aluno_Repository alunoRepository;
 
     @Test
-    void testSaveAndFindUser() {
-        //Cria um objeto User com um email válido
+    void testSaveAndFindAluno() {
+
         Aluno aluno = new Aluno();
-        aluno.setNome("testUser");
+        aluno.setNome("testAluno");
         aluno.setEmail(new Aluno_Email("test@example.com"));
 
-         //Salva no banco de dados
         Aluno savedAluno = alunoRepository.save(aluno);
-        assertNotNull(savedAluno.getId());  // Verifica se o ID foi gerado
+        assertNotNull(savedAluno.getId()); 
 
-        // Busca o usuário pelo ID
         Optional<Aluno> retrievedAluno = alunoRepository.findById(savedAluno.getId());
         assertTrue(retrievedAluno.isPresent());
-        assertEquals("testUser", retrievedAluno.get().getNome	());
+        assertEquals("testAluno", retrievedAluno.get().getNome	());
    }
 	
 }

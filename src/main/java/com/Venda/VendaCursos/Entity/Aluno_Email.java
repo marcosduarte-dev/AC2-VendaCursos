@@ -8,7 +8,6 @@ import jakarta.persistence.Embeddable;
 public class Aluno_Email {
     private String emailAddress;
 
-    // Construtor padrão necessário para o JPA
     protected Aluno_Email() {}
 
     public Aluno_Email(String emailAddress) {
@@ -22,7 +21,6 @@ public class Aluno_Email {
         return emailAddress;
     }
 
-    // Sobrescreva equals e hashCode para garantir comparação por valor
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
